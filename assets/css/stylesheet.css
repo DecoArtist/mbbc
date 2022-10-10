@@ -104,6 +104,7 @@ body {
 }
 
 .ico-coin {
+    pointer-events: none;
     width: 32px;
     margin-top: 135%;
     margin-left: 30%;
