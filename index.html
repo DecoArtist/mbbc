@@ -1,83 +1,47 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <link rel="shortcut icon" href="obj/bricks_obj.png" type="svg/x-icon">
-    <link rel="stylesheet" href="stylesheet.css">
-    <title>MARIO'S BRICK BLOCK CLICKER</title>
-<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Doors.">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta property="og:title" content="Doors.">
+        <meta property="og:site_name" content="Doors.">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="Doors.">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@DecoW_">
+        <meta name="twitter:title" content="DecoW">
+        <meta name="twitter:description" content="Doors.">
+        <meta name="author" content="DecoW">
+        <meta name="developer" content="DecoW">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>Doors.</title>
+        <link id="favicon" rel="icon" href="assets/images/greenroom-hidden.png" type="image/png" sizes="16x16">
+        <link rel="stylesheet" href="assets/css/extra.css">
+        <script src="assets/js/script.js" defer></script>
+    </head>
+
     <body>
+        <main>
+            <div id="center">
+                <div class="greenroom" id="greenroom_hidden">
+                    <img alt="Mysterious door" class="greenroom-bg" src="assets/images/greenroom-hidden.png">
+                    <button id="greenroom_door"></button>
+                </div>
 
-        <noscript>
-            <div>
-                <h1 class="nos">!We're sorry but MARIO'S BRICK COIN<br>
-                    BLOCK WEB doesn't work without<br>
-                    JavaScript enabled; Please enable<br>
-                    it to continue...!</h1>
+                <div class="greenroom hidden" id="greenroom">
+                    <img alt="The Green Room" class="greenroom-bg" src="assets/images/greenroom.png">
+                    <a alt="Left door" href="/weather/" id="greenroom_left"></a>
+                    <a alt="Changing room door" href="/changingroom/" id="greenroom_middle"></a>
+                    <a alt="Right door" href="/tv/" id="greenroom_right"></a>
+                </div>
             </div>
-        </noscript>
+        </main>
+    </body>
+</html>
 
-    <script type="text/javascript">
-        var coinSFX = new Audio();
-        coinSFX.src = "audio/coin.mp3";
+<script crossorigin="anonymous" integrity="sha512-yBpuflZmP5lwMzZ03hiCLzA94N0K2vgBtJgqQ2E1meJzmIBfjbb7k4Y23k2i2c/rIeSUGc7jojyIY5waK3ZxCQ==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon="{&quot;rayId&quot;:&quot;756b7b83ccf24d42&quot;,&quot;token&quot;:&quot;377f50f2716b474ea394c9bbd3aaef87&quot;,&quot;version&quot;:&quot;2022.8.1&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
 
-
-        var counterVal = 0;
-
-function incrementClick() {
-    updateDisplay(++counterVal);
-}
-
-function resetCounter() {
-    counterVal = 0;
-    updateDisplay(counterVal);
-}
-
-function updateDisplay(val) {
-    document.getElementById("counter-label").innerHTML = val;
-}
-    </script>
-
-<div class="bodyweb web fullweb">
-    <div class="bodywebbgr"></div>
-
-    <div class="centerwebsite">
-        <div class="coincontent">
-            <h1 class="counter-label" id="counter-label">0</h1>
-            <img class="coin_obj" src="obj/coin_obj.png">
-            <!-- <img src="obj/coin_obj.png" class="coin_obj"> -->
-        </div>
-
-        <center>
-        <h1 class="mario_text">MARIO'S BRICK COIN<br>BLOCK CLICKER</h1>
-        <!--
-        <h2 class="letsee">let's see how many clicks u can do before you get bored and close the web.</h2>
-        <h2 class="how">(click in the brick block below)</h2>
-        <noscript class="nos"><strong>!We're sorry but MARIO'S BRICK COIN<br>BLOCK WEB doesn't work without,<br>JavaScript enabled; Please enable<br>it to continue...!</strong></noscript>
-        --></center>
-
-        <center>
-            <!-- <img class="coin_obj" src="obj/coin_obj.png" alt="COIN"> -->
-            <div class="block_obj" onclick="incrementClick(),coinSFX.play();"></div>
-
-            <h6 class="nas">no audio spam, yay. how u found me here?</h6>
-
-            <div class="tweetDIV">
-                <a href="https://twitter.com/intent/tweet?hashtags=BrickCoinWeb&text=Go%20get%20some%20coins%20in%20the%20https://brick-coin.netlify.app/%20website!%20made%20by%20@DecoW_%20#BrickCoinWeb%20" target="blank_">
-                    <div class="aninTwSVG">
-                        <svg x="0px" y="0px" viewBox="-2.5 -2.1 33 24">
-                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                        </svg>
-                    </div>
-                </a>
-
-                <h2 class="credits_txt">Website made by @DecoW_ and Bruna</h2>
-
-        </center>
-
-</div>
-    </div>
-        </body>
