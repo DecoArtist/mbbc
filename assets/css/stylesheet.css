@@ -1,0 +1,191 @@
+* {
+    user-select: none;
+}
+
+html { 
+    position: relative;
+}
+
+a { 
+    text-decoration: none;
+}
+
+@font-face {
+	font-family: "SM";
+	src: url("font/SuperMario.ttf") format("truetype");
+	font-weight: 150%;
+	font-style: normal;
+}
+
+#center { 
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+     position: absolute;
+}
+
+body {
+    margin: 0px;
+    /* background-image: radial-gradient(rgb(253, 253, 253), rgb(172, 172, 172)); */
+}
+
+.bgr-website {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    z-index: -10;
+
+    filter: hue-rotate(158deg) brightness(1.4);
+    filter: hue-rotate(30deg) contrast(1.2);
+    filter: contrast(1.2);
+
+    background-image: url(../images/bg/starSS.jpeg);
+    background-attachment: fixed;
+    animation: backgroundAN 20s linear infinite;
+    /* animation: backgroundAN 1s cubic-bezier(1, -2.51, 0, 3.84) infinite; */      /* <----- CRAZY BACKGROUND! TEST IF U WANT */
+}
+
+@keyframes backgroundAN{
+	0%   {background-position: 0 0,0 0;}
+	100% {background-position: -273px -104px;}
+}
+
+.hidden {
+    display: none !important;
+}
+
+.brickblock-container, .ico-coin-container {    
+    position: relative;  
+
+    cursor: pointer;
+    transition: 0.1s;
+}  
+
+.brickblock-container {
+    margin: 20px;
+    margin-top: -20px;
+    margin-left: 9px;
+}
+
+.ico-coin-container {
+    cursor: auto;
+}
+
+.brickblock-container:active {    
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.brickblock {    
+    width: 100%;
+    image-rendering: pixelated;
+    pointer-events: none;  
+
+    background-color: #000;
+    border-color: #000;
+    border: 4.5px solid;
+    border-radius: 15px;
+
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.counter-label {
+    font-family: SM;
+    color: #ffc13b;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #000;
+    font-size: 55px;
+}
+
+.ico-coin {
+    width: 32px;
+    margin-top: 135%;
+    margin-left: 30%;
+}
+
+.title {
+    position: relative;
+    text-align: center;
+    margin-top: -45px;
+    margin-bottom: 18px;
+}
+
+.mario_text {
+    font-family: SM;
+    font-weight: 900;
+    font-size: 27px;
+
+    color: #ec0a06;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    text-shadow: 0px 6px 0px #000000, 0px -4px 0px #000000, -3px 1px 0px #000000, -3px 6px 0px #000000, -3px -4px 0px #000000, 3px -4px 0px #000000, 3px 3px 0px #000000, 3px 6px 0px #000000, 5px -1px 0px #000000, 5px -3px 0px #000000, 5px 6px 0px #000000, 5px 6px 0px #000000;
+}
+
+.aninTwSVG svg {
+    width: 55px;
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    transition: 0.3s;
+    fill: #ffffff;
+    background-color: #00aaff;
+    border-color: #0e0301;
+    border: 4.5px solid black;
+    border-radius: 15px;
+}
+
+.aninTwSVG svg:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+    fill: #00aaff;
+    background-color: white;
+}
+
+.aninTwSVG svg:active {
+    transform: scale(0.9);
+    cursor: pointer;
+    fill: #0064c2;
+    background-color: #9b9b9b;
+}
+
+@media screen and (max-height: 490px)
+{
+    .aninTwSVG svg {
+        width: 40.25px;
+        height: 37.5px;
+        padding-top: 3.75px;
+        padding-bottom: 7.5px;
+        padding-left: 7.5px;
+    }
+
+    .brickblock-container {
+        width: 185px;
+    }
+
+    .counter-label{
+        font-size: 40px;
+    }
+
+    .ico-coin {
+        width: 25px;
+        margin-top: 125%;
+    }
+
+    .mario_text {
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-height: 390px)
+{
+    .brickblock-container {
+        width: 110px;
+    }
+}
