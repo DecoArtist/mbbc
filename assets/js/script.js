@@ -63,7 +63,7 @@ function getname() {
         restartSFX.src = "assets/audio/galaxy/restart.wav",
         upSFX.src = "assets/audio/galaxy/up.wav",
         document.getElementById('website__title').innerHTML = `Mario Galaxy<br>Starship Clicker`;
-    } else if (MarioCode == 'odyssey') {
+    } else if (MarioCode == 'odyssey' || MarioCode == 'Odyssey' ) {
         return document.querySelector('.txt__code-fail').innerText = '',
         document.getElementById('getcode').classList.remove('--getcode__fail'),
         document.getElementById('getcode').classList.add('--getcode__good'),
