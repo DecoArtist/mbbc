@@ -1,22 +1,64 @@
-* {
-    user-select: none;
-}
-
-html { 
-    position: relative;
-}
-
-a { 
-    text-decoration: none;
-}
-
 @font-face {
 	font-family: "SM";
 	src: url("font/SuperMario.ttf") format("truetype");
 	font-weight: 150%;
 	font-style: normal;
 }
-
+:root {
+    --blue: #2273ff;
+    --dark-blue: #073bd9;
+    --primary: #007bff;
+    --link: #3ea6ff;
+    --indigo: #6610f2;
+    --purple: #6500E5;
+    --pink: #e83e8c;
+    --redsy: #ff7582;
+    --red: #de264c;
+    --orange: #fd7e14;
+    --yellow: #ffb921;
+    --green: #28a745;
+    --green_teal: #98ff4a;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --highlight: #f8f9fa;
+    --dark: #353c52;
+    --text-shadow-btn: -1.5px -1.5px 0 #040404, 0 -1.5px 0 #040404, 1.5px -1.5px 0 #040404, 1.5px 0 0 #040404, 1.5px 1.5px 0 #040404, 0 1.5px 0 #040404, -1.5px 1.5px 0 #040404, -1.5px 0 0 #040404, 0 3px 0 #040404, -1.5px 3px 0 #040404, 1.5px 3px 0 #040404;
+    --text-shadow: -2px -2px 0 #000000, 0 -2px 0 #000000, 2px -2px 0 #000000, 2px 0 0 #000000, 2px 2px 0 #000000, 0 2px 0 #000000, -2px 2px 0 #000000, -2px 0 0 #000000, 0 3.5px 0 #000000, -2px 3.5px 0 #000000, 2px 3.5px 0 #000000;
+    --text-shadow-small: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    --text-shadow_alt: -1px -1px 0 #000000, 0 -1px 0 #000000, 1px -1px 0 #000000, 1px 0 0 #000000, 1px 1px 0 #000000, 0 1px 0 #000000, -1px 1px 0 #000000, -1px 0 0 #000000, 0 2.6px 0 #000000, -1px 2.6px 0 #000000, 1px 2.6px 0 #000000;
+    --font-family-system: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+.weak-text-shadow{-webkit-text-stroke-width: 0.125rem;-webkit-text-stroke-color: #000;color: #fff;text-shadow: 0 1px 0 #000, 0 2px 0 #000, 0 3px 0 #000, 0 4px 0 #000;}
+.no-scroll {overflow-y: hidden;bottom: 0;left: 0;position: fixed;right: 0;top: 0;}
+.hidden{display: none !important;opacity: 0;}
+img{pointer-events:none;user-select:none;}
+.d-block{display: block!important;}
+.d-none{display: none!important;}
+.invert{filter: invert(1);}
+.flip{transform: rotateY(-180deg);}
+.p-absolute{position: absolute!important;}
+.p-relative{position: relative!important;}
+.grab-animate{cursor: grab;}
+.grab-animate:active {cursor: grabbing;}
+.row{display: flex;flex-direction: row;}
+*, :after, :before {
+    padding: 0%;
+    scroll-behavior: smooth;
+    box-sizing: border-box!important;
+    user-select: none;
+}
+html { 
+    position: relative;
+}
+a { 
+    text-decoration: none;
+    font-weight:400;
+    color:unset;
+}
 #center { 
     display: flex;
     flex-direction: column;
@@ -24,15 +66,21 @@ a {
      justify-content: center;
      width: 100%;
      height: 100%;
-     overflow: hidden;
      position: absolute;
 }
-
 body {
     margin: 0px;
-    /* background-image: radial-gradient(rgb(253, 253, 253), rgb(172, 172, 172)); */
+    background: var(--dark);
+    font-family: SM;
+    font-weight: 900;
 }
-
+/* body.--AIHC {
+    font-family: 'Press Start 2P';font-size: 22px;
+    font-weight: 400;
+} */
+.container__.row {
+    transform: translateY(-2px);
+}
 .bgr-website {
     width: 100%;
     height: 100%;
@@ -49,39 +97,33 @@ body {
     animation: backgroundAN 20s linear infinite;
     /* animation: backgroundAN 1s cubic-bezier(1, -2.51, 0, 3.84) infinite; */      /* <----- CRAZY BACKGROUND! TEST IF U WANT */
 }
-
 @keyframes backgroundAN{
 	0%   {background-position: 0 0,0 0;}
 	100% {background-position: -273px -104px;}
 }
-
 .hidden {
     display: none !important;
 }
-
-.brickblock-container, .ico-coin-container {    
+.obj__brickblock-container, .obj__coin-container {    
     position: relative;  
 
     cursor: pointer;
     transition: 0.1s;
 }  
-
-.brickblock-container {
+.obj__brickblock-container {
     margin: 20px;
     margin-top: -20px;
     margin-left: 9px;
+    width: 236px;
 }
-
-.ico-coin-container {
-    cursor: auto;
-}
-
-.brickblock-container:active {    
+.obj__brickblock-container:active, .obj__brickblock-container.--active {    
     transform: scale(1.1);
     filter: brightness(1.2);
 }
-
-.brickblock {    
+.obj__coin-container {
+    cursor: auto;
+}
+.obj__brickblock {    
     width: 100%;
     image-rendering: pixelated;
     pointer-events: none;  
@@ -94,40 +136,37 @@ body {
     cursor: pointer;
     transition: 0.1s;
 }
-
+.obj__brickblock.--galaxy {    
+    background: none;
+    border: none;
+    border-radius: 0;
+}
 .counter-label {
-    font-family: SM;
     color: #ffc13b;
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: #000;
     font-size: 55px;
 }
-
-.ico-coin {
+.obj__coin {
     pointer-events: none;
     width: 32px;
     margin-top: 135%;
     margin-left: 30%;
 }
-
-.title {
+.txt__title {
     position: relative;
     text-align: center;
     margin-top: -45px;
     margin-bottom: 18px;
 }
-
-.mario_text {
-    font-family: SM;
-    font-weight: 900;
+.txt__title h1 {
     font-size: 27px;
 
     color: #ec0a06;
-    -webkit-text-stroke-width: 1px;
+    /* -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
-    text-shadow: 0px 6px 0px #000000, 0px -4px 0px #000000, -3px 1px 0px #000000, -3px 6px 0px #000000, -3px -4px 0px #000000, 3px -4px 0px #000000, 3px 3px 0px #000000, 3px 6px 0px #000000, 5px -1px 0px #000000, 5px -3px 0px #000000, 5px 6px 0px #000000, 5px 6px 0px #000000;
+    text-shadow: 0px 6px 0px #000000, 0px -4px 0px #000000, -3px 1px 0px #000000, -3px 6px 0px #000000, -3px -4px 0px #000000, 3px -4px 0px #000000, 3px 3px 0px #000000, 3px 6px 0px #000000, 5px -1px 0px #000000, 5px -3px 0px #000000, 5px 6px 0px #000000, 5px 6px 0px #000000; */
 }
-
 .aninTwSVG svg {
     width: 55px;
     height: 50px;
@@ -141,52 +180,95 @@ body {
     border: 4.5px solid black;
     border-radius: 15px;
 }
-
 .aninTwSVG svg:hover {
     transform: scale(0.9);
     cursor: pointer;
     fill: #00aaff;
     background-color: white;
 }
-
 .aninTwSVG svg:active {
     transform: scale(0.9);
     cursor: pointer;
     fill: #0064c2;
     background-color: #9b9b9b;
 }
+.obj__webcodes h5 {
+    margin: 0 0 5px 5px;
+}
+input#getcode {
+   transition: .5s;
+   border-radius: 5px;
+   border: solid black 1.5px;
+   border-bottom-width: 2.5px;
+   padding-left: 5px;
 
-@media screen and (max-height: 490px)
+}
+input#getcode:active, input#getcode:focus-visible, input#getcode:focus, input#getcode:target {
+    outline-offset: 0px;
+    outline: #e39d00 auto 1px;
+    outline: none;
+}
+input#getcode.--getcode__good {
+    outline-offset: 0px;
+    outline: #e39d00 auto 1px;
+}
+input#getcode.--getcode__fail {
+    border: solid var(--danger) 1.5px;
+    border-bottom-width: 2.5px;
+}
+button#getcode__verify {
+    margin-left: 6px;
+    width: 23px;
+    height: 23px;
+    border: solid black 2px;
+    border-bottom-width: 3.5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+button#getcode__verify img.obj__submit-icon {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.8) contrast(1.5);
+}
+button#getcode__verify img.obj__submit-icon.--AIHC, button#getcode__verify img.obj__submit-icon.--Dk {
+    filter: none;
+}
+.obj__webcodes p {
+    color: #be0000;
+    font-size: 13px;
+    text-align: center;
+    margin: 5px 0 0 0;
+    text-shadow: var(--text-shadow-btn);
+}
+@media screen and (max-height: 535px)
 {
     .aninTwSVG svg {
-        width: 40.25px;
-        height: 37.5px;
+        width: 54.25px;
+        height: 54.5px;
         padding-top: 3.75px;
         padding-bottom: 7.5px;
         padding-left: 7.5px;
     }
-
-    .brickblock-container {
+    .obj__brickblock-container {
         width: 185px;
     }
-
     .counter-label{
         font-size: 40px;
     }
-
-    .ico-coin {
+    .obj__coin {
         width: 25px;
         margin-top: 125%;
     }
-
     .mario_text {
         font-size: 23px;
     }
 }
-
-@media screen and (max-height: 390px)
+@media screen and (max-height: 470px)
 {
-    .brickblock-container {
+    #center {
+        transform: translateY(-25px);
+    }
+    .obj__brickblock-container {
         width: 110px;
     }
 }
