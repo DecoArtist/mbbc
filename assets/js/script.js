@@ -19,7 +19,22 @@ var StarbitGenerator = Math.floor(Math.random()*all_galaxybits_mg.length);
 
 function getname() {
     MarioCode = document.getElementById("getcode").value
-    if (MarioCode == '1983') {
+    if (MarioCode == "null" || MarioCode == null || MarioCode == "" || MarioCode == " " || MarioCode == "  " || MarioCode == "   " || MarioCode == "    " || MarioCode == "     " || MarioCode == "      " || MarioCode == "       " || MarioCode == "        " || MarioCode == "         " || MarioCode == "          " || MarioCode == "           " || MarioCode == "            " || MarioCode == "             " || MarioCode == "              ") {
+        return document.querySelector('.txt__code-fail').innerText = '',
+        document.getElementById('getcode').classList.remove('--getcode__fail'),
+        document.getElementById('getcode').classList.add('--getcode__good'),
+        document.querySelector('.obj__coin').src = 'assets/images/obj/coin_obj.png',
+        document.querySelector('.obj__brickblock').src = 'assets/images/obj/bricks_obj.png',
+        document.querySelector('.obj__submit-icon').src = 'assets/images/obj/question_obj.webp',
+        document.querySelector('.bgr-website').style = '',
+        document.body.classList.add('--'),
+        coinSFX.src = "assets/audio/coin.mp3",
+        restartSFX.src = "assets/audio/restart.mp3",
+        upSFX.src = "assets/audio/up.wav",
+        maxupSFX.src = "assets/audio/1000up.wav",
+        document.getElementById('website__title').innerHTML = `Mario's Brick Coin<br>Block Clicker`,
+        document.querySelector('.obj__brickblock').classList.remove('--galaxy');
+    } else if (MarioCode == '1983') {
         return document.querySelector('.txt__code-fail').innerText = '',
         document.getElementById('getcode').classList.remove('--getcode__fail'),
         document.getElementById('getcode').classList.add('--getcode__good'),
@@ -34,21 +49,7 @@ function getname() {
         maxupSFX.src = "assets/audio/1000up.wav",
         document.getElementById('website__title').innerHTML = `Mario's Brick Coin<br>Block Clicker`,
         document.querySelector('.obj__brickblock').classList.remove('--galaxy');
-    } else if (MarioCode == 'galaxy2007') {
-        return document.querySelector('.txt__code-fail').innerText = '',
-        document.getElementById('getcode').classList.remove('--getcode__fail'),
-        document.getElementById('getcode').classList.add('--getcode__good'),
-        document.querySelector('.obj__coin').src = `assets/images/obj/galaxy/${all_galaxybits_mg[StarbitGenerator]}starbit_obj.webp`,
-        document.querySelector('.obj__brickblock').src = 'assets/images/obj/galaxy/starship-mario_obj.webp',
-        document.querySelector('.obj__brickblock').classList.add('--galaxy'),
-        document.querySelector('.obj__submit-icon').src = 'assets/images/obj/question_obj.webp',
-        document.querySelector('.bgr-website').style = 'background-image: url(/assets/images/bg/bb80313422ae9bfc98f01d044cc6fda7.jpg);animation: none;background-size: cover;filter: blur(2px);background-position: center;',
-        document.body.classList.add('--galaxy'),
-        coinSFX.src = "assets/audio/galaxy/coin.wav",
-        restartSFX.src = "assets/audio/galaxy/restart.wav",
-        upSFX.src = "assets/audio/galaxy/up.wav",
-        document.getElementById('website__title').innerHTML = `Mario Galaxy<br>Starship Clicker`;
-    } else if (MarioCode == 'Galaxy2007') {
+    } else if (MarioCode == 'galaxy2007' || MarioCode == 'Galaxy2007') {
         return document.querySelector('.txt__code-fail').innerText = '',
         document.getElementById('getcode').classList.remove('--getcode__fail'),
         document.getElementById('getcode').classList.add('--getcode__good'),
@@ -93,6 +94,28 @@ document.getElementById('obj__brickblock-container').onclick = function(){
 }
 document.getElementById('getcode__verify').onclick = function(){
     getname();
+}
+document.querySelector('.restart').onclick = function(){
+    resetCounter()
+}
+
+document.getElementById('checkbox__label').onclick = () => {
+    if (document.getElementById("checkbox_function").checked == true) {
+        document.querySelector('.volume').title = 'unmute'
+        document.querySelector('.volume').innerHTML = '<span class="material-symbols-outlined">volume_off</span>';
+        coinSFX.volume = 0;
+        restartSFX.volume = 0;
+        upSFX.volume = 0;
+        maxupSFX.volume = 0;
+    }
+    else {
+        document.querySelector('.volume').title = 'mute'
+        document.querySelector('.volume').innerHTML = '<span class="material-symbols-outlined">volume_up</span>';
+        coinSFX.volume = 1;
+        restartSFX.volume = 1;
+        upSFX.volume = 1;
+        maxupSFX.volume = 1;
+    }
 }
 
 function clickCounter() {

@@ -240,6 +240,33 @@ button#getcode__verify img.obj__submit-icon.--AIHC, button#getcode__verify img.o
     margin: 5px 0 0 0;
     text-shadow: var(--text-shadow-btn);
 }
+.p-absolute.restart {
+    top: 1vh;
+    left: 1vw;
+    color: white;
+    cursor: pointer;
+}
+.p-absolute.restart>* {
+    color: white;
+    text-shadow: var(--text-shadow-btn);
+    font-size: 35px;
+}
+label#checkbox__label {
+    right: 1vw;
+    top: 1vh;
+    height: 29px;
+    overflow: hidden;
+    cursor: pointer;
+}
+label#checkbox__label span {
+    color: white;
+    text-shadow: var(--text-shadow-btn);
+    font-size: 30px;
+}
+input#checkbox_function {
+    position: absolute;
+    opacity: 0;
+}
 @media screen and (max-height: 535px)
 {
     .aninTwSVG svg {
