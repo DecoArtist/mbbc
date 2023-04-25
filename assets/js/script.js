@@ -63,7 +63,22 @@ function getname() {
         restartSFX.src = "assets/audio/galaxy/restart.wav",
         upSFX.src = "assets/audio/galaxy/up.wav",
         document.getElementById('website__title').innerHTML = `Mario Galaxy<br>Starship Clicker`;
-    } else {
+    } else if (MarioCode == 'odyssey') {
+        return document.querySelector('.txt__code-fail').innerText = '',
+        document.getElementById('getcode').classList.remove('--getcode__fail'),
+        document.getElementById('getcode').classList.add('--getcode__good'),
+        document.querySelector('.obj__coin').src = 'assets/images/obj/moon.png',
+        document.querySelector('.obj__brickblock').src = 'assets/images/obj/cappy.png',
+        document.querySelector('.obj__submit-icon').src = 'assets/images/obj/question_obj.webp,
+        document.querySelector('.bgr-website').style = 'background-image: url(/assets/images/bg/261037.jpeg);animation: none;background-size: cover; filter: blur(2px);background-position: bottom center;',
+        document.body.classList.add('--Odyssey'),
+        coinSFX.src = "assets/audio/coin.mp3",
+        restartSFX.src = "assets/audio/restart.mp3",
+        upSFX.src = "assets/audio/up.wav",
+        maxupSFX.src = "assets/audio/1000up.wav",
+        document.getElementById('website__title').innerHTML = `Mario's Cappy<br>Hat Clicker`,
+        document.querySelector('.obj__brickblock').classList.remove('--galaxy');
+        } else {
         return document.querySelector('.txt__code-fail').innerText = 'This code is invalid...',
         document.getElementById('getcode').classList.add('--getcode__fail'),
         document.getElementById('getcode').classList.remove('--getcode__good');
