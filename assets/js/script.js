@@ -71,7 +71,7 @@ function getname() {
         document.querySelector('.obj__brickblock').src = 'assets/images/obj/cappy.png',
         document.querySelector('.obj__brickblock').classList.add('--galaxy'),
         document.querySelector('.obj__submit-icon').src = 'assets/images/obj/question_obj.webp',
-        document.querySelector('.bgr-website').style = 'background-image:url(/assets/images/bg/261037.jpeg);animation: none;background-size: cover;filter: blur(2px);background-position: center;',
+        document.querySelector('.bgr-website').style = 'background-image:url(/assets/images/bg/261037.jpeg);animation: none;background-size: cover;filter: blur(5px);background-position: center;',
         document.body.classList.add('--galaxy'),
         coinSFX.src = "assets/audio/galaxy/coin.wav",
         restartSFX.src = "assets/audio/galaxy/restart.wav",
